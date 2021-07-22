@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 	<link href="<?=base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?=base_url()?>/assets/css/fontawesome.css" rel="stylesheet">
 	<script src="<?=base_url()?>/assets/js/jquery.js"></script>
 </head>
 <body>

@@ -37,6 +37,6 @@
 
 <script src="<?=base_url()?>/assets/js/bootstrap.min.js"></script>
 <script src="<?=base_url()?>/assets/js/common.js"></script>
-
+<script src="<?=base_url()?>/assets/js/fontawesome.js"></script>
 </body>
 </html>

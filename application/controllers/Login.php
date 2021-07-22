@@ -28,14 +28,20 @@ class Login extends CI_Controller
 			$response['msg'] = validation_errors('<div class="error">', '</div>');
 		} else {
 			$results= $this->login_model->login_check($userName);
-			if(password_verify($password,$results->password)){
-				$this->session->set_userdata(array('user'=>$results->id));
-				$response['status'] = 1;
-				$response['msg'] = " Successfully Logged In.";
+			if(!EMPTY($results)){
+				if(password_verify($password,$results->password)){
+					$this->session->set_userdata(array('user'=>$results->id));
+					$response['status'] = 1;
+					$response['msg'] = " Successfully Logged In.";
+				}else{
+					$response['status'] = 0;
+					$response['msg'] = "Incorrect UserName or Password!";
+				}
 			}else{
 				$response['status'] = 0;
 				$response['msg'] = "Incorrect UserName or Password!";
 			}
+
 		}
 		echo json_encode($response);
 	}

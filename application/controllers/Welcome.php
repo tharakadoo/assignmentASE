@@ -111,10 +111,10 @@ class Welcome extends CI_Controller {
 			$msg.="<p> Your login Password is <b>$password</b></p>";
 			$msg.="<p> Please login to the system using above login credentials.</p>";
 			$msg.="<small>Thank You</small>";
-			//$email_status=$this->welcome_model->sendMail($email,$msg);
+			$email_status=$this->welcome_model->sendMail($email,$msg);
 
 			$response['status'] = 1;
-			//$response['email_status'] = $email_status;
+			$response['email_status'] = $email_status;
 			$response['id'] = $inserted_id;
 			$response['msg'] = " Successfully checked out.";
 			$_SESSION["flash"] = array("type" => "success", "message" => "Order Placement Success! Please login to the system using your UserName and Password");

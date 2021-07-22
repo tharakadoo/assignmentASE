@@ -210,8 +210,8 @@
             return;
         }
         $("#response").removeClass().html("");
-        var btn = $("#btnSave");
-        btn.button('loading');
+        $("#btnSave").prop("disabled", true);
+        $("#btnSave").html('<i class="fa fa-spinner fa-spin"></i> loading...' );
         $.ajax({
             url: "<?php echo site_url('welcome/post_checkout'); ?>",
             method: 'post',
@@ -223,17 +223,18 @@
                 if (data.status == 1) {
                     $("html, body").animate({scrollTop: $('#wrapper').offset().top}, 1000);
                     show_success_alert("#response", data.msg);
-                    btn.button('reset');
                     window.location.replace("<?php echo site_url('login'); ?>");
                 } else {
+                    $("#btnSave").prop("disabled", false);
+                    $("#btnSave").html('Continue to checkout' );
                     $("html, body").animate({scrollTop: $('#wrapper').offset().top}, 1000);
                     show_error_alert("#response", data.msg);
-                    btn.button('reset');
                 }
             },
             error: function() {
+                $("#btnSave").prop("disabled", false);
+                $("#btnSave").html('Continue to checkout' );
                 alert('Operation failed. Please try again.');
-                btn.button('reset');
             }
         });
 
