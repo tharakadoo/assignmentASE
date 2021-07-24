@@ -19,8 +19,8 @@ class Welcome_model extends CI_Model {
 			'protocol' => 'smtp',
 			'smtp_host' => 'ssl://smtp.gmail.com',
 			'smtp_port' => 465,
-			'smtp_user' => 'tharushidoo@gmail.com', // change it to yours
-			'smtp_pass' => 'tkurulla2', // change it to yours
+			'smtp_user' => 'abc@gmail.com', // change it to yours
+			'smtp_pass' => '123', // change it to yours
 			'mailtype' => 'html',
 			'charset' => 'iso-8859-1',
 			'wordwrap' => TRUE
