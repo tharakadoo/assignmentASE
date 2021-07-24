@@ -154,7 +154,7 @@
 			</div>
 
 			<div class="row my-4">
-				<div class="offset-5 col-md-4 row">
+				<div class="mx-auto col-md-4 row">
 					<label for="total" class="col-sm-3 col-form-label">Total</label>
 					<div class="col-sm-9">
 						<input type="text" class="form-control" id="total" name="total">
@@ -171,6 +171,7 @@
 </main>
 
 <script>
+
     $(document).on('change', '.pack', function(event) {
         var myArr = event.target.id.split("_");
         var clicked=myArr[1];
